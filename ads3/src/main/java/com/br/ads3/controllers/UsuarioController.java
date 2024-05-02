@@ -21,7 +21,7 @@ public class UsuarioController {
         userService.createUser(usuario);
     }
 
-    @GetMapping("/listas")
+    @GetMapping("/listar")
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     public List<Usuario> showAllUsers() {
         return userService.showAllUsers();
