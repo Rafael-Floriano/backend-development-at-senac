@@ -27,4 +27,10 @@ public class UsuarioController {
         return userService.showAllUsers();
     }
 
+    @DeleteMapping("/deletar/{id}")
+    @ResponseStatus(value = HttpStatus.OK, reason = "User has been deleted")
+    public void deleteUser(@PathVariable("id") Integer userId) {
+        userService.deleteUseById(userId);
+    }
+
 }
