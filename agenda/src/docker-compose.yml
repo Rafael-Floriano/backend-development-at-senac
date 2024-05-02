@@ -1,0 +1,11 @@
+version: "1.0"
+
+services:
+  database:
+    image: postgres
+    container_name: postgres-avaliacao
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mestre
+    ports:
+      - 5434:5432
