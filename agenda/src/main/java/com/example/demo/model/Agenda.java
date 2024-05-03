@@ -23,6 +23,6 @@ public class Agenda implements Serializable {
     private Usuario usuario;
 
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Contato> contato;
+    private List<Contato> contatos;
 
 }
