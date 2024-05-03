@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,8 @@ public class Contato implements Serializable {
     private Long id;
     private String nome;
     private String telefone;
-    @OneToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.LAZY)
     private Agenda agenda;
 
 }
