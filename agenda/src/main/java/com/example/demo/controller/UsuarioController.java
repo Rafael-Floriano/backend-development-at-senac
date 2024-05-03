@@ -23,8 +23,9 @@ public class UsuarioController {
     }
 
     @GetMapping("/listar/todos")
+    @ResponseStatus(value = HttpStatus.OK)
     public List<Usuario> listAllUsers() {
-        usuarioService.listAllUsers();
+        return usuarioService.listAllUsers();
     }
 
 }
