@@ -36,4 +36,9 @@ public class ContatoService {
         contatoRepository.deleteById(idContato);
     }
 
+    @Transactional(rollbackOn = Exception.class)
+    public List<Contato> findAllContactsByName(@NotNull String name) {
+        return contatoRepository.findAllByNome(name);
+    }
+
 }
