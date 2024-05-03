@@ -36,4 +36,10 @@ public class ContatoController {
         contatoService.deleteUserById(userId);
     }
 
+    @GetMapping("/buscaPorNome/{nome}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<Contato> findAllContactsByName(@PathVariable("nome") @NotNull String name) {
+        return contatoService.findAllContactsByName(name);
+    }
+
 }
