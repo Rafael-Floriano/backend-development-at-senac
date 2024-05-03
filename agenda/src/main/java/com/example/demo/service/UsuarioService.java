@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
+
 @Slf4j
 @Service
 @Validated
@@ -21,6 +23,11 @@ public class UsuarioService {
     @Transactional(rollbackOn = Exception.class)
     public void createNewUser(@NotNull Usuario usuario) {
         usuarioRepository.save(usuario);
+    }
+
+    @Transactional(rollbackOn = Exception.class)
+    public List<Usuario> listAllUsers() {
+        return usuarioRepository.findAll();
     }
 
 }
