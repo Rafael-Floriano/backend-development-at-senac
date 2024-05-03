@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Agenda;
-import com.example.demo.model.Usuario;
+import com.example.demo.model.Contato;
 import com.example.demo.service.AgendaService;
-import com.example.demo.service.UsuarioService;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,8 +31,14 @@ public class AgendaController {
 
     @DeleteMapping("/deletar/{id}")
     @ResponseStatus(value = HttpStatus.OK, reason = "Agenda excluída com sucesso!")
-    public void deleteUserById(@PathVariable("id") @NotNull Long userId) {
-        agendaService.deleteUserById(userId);
+    public void deleteUserById(@PathVariable("id") @NotNull Long agendaId) {
+        agendaService.deleteUserById(agendaId);
+    }
+
+    @GetMapping("/listaContatos/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<Contato> listaContatos(@PathVariable("id") @NotNull Long agendaId) {
+        return agendaService.showAllContactsByIdAgenda(agendaId);
     }
 
 }

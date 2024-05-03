@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Agenda;
+import com.example.demo.model.Contato;
 import com.example.demo.model.Usuario;
 import com.example.demo.repository.AgendaRepository;
 import com.example.demo.repository.UsuarioRepository;
@@ -34,6 +35,11 @@ public class AgendaService {
     @Transactional(rollbackOn = Exception.class)
     public void deleteUserById(@NotNull Long idAgenda) {
         agendaRepository.deleteById(idAgenda);
+    }
+
+    @Transactional(rollbackOn = Exception.class)
+    public List<Contato> showAllContactsByIdAgenda(@NotNull Long agendaId) {
+        return agendaRepository.findContatosById(agendaId);
     }
 
 }
