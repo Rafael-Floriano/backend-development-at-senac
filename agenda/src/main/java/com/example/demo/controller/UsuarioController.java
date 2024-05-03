@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
@@ -18,6 +20,11 @@ public class UsuarioController {
     @ResponseStatus(value = HttpStatus.CREATED, reason = "Usuario foi criado com sucesso!")
     public void createNewUser(@RequestBody @NotNull Usuario usuario) {
         usuarioService.createNewUser(usuario);
+    }
+
+    @GetMapping("/listar/todos")
+    public List<Usuario> listAllUsers() {
+        usuarioService.listAllUsers();
     }
 
 }
