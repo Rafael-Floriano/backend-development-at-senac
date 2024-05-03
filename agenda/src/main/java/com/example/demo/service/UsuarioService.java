@@ -30,4 +30,9 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    @Transactional(rollbackOn = Exception.class)
+    public void deleteUserById(@NotNull Long idUser) {
+        usuarioRepository.deleteById(idUser);
+    }
+
 }
