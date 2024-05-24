@@ -16,7 +16,7 @@ public class UsuarioService {
 
     @Transactional(readOnly = true)
     public List<UsuarioDto> buscaUsuarios() {
-
+        return usuarioRepository.findAll().stream().map(UsuarioDto::new).toList();
     }
 
 }
