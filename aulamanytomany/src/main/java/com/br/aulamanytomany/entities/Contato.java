@@ -1,9 +1,6 @@
 package com.br.aulamanytomany.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Contato {
@@ -13,6 +10,9 @@ public class Contato {
     private int id;
     private String nome;
     private String telefone;
+
+    @ManyToOne
+    private Usuario usuario;
 
     public int getId() {
         return id;
@@ -38,4 +38,11 @@ public class Contato {
         this.telefone = telefone;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }
