@@ -1,6 +1,5 @@
 package com.br.aulamanytomany.dto;
 
-import com.br.aulamanytomany.entities.Contato;
 import com.br.aulamanytomany.entities.Usuario;
 
 import java.io.Serializable;

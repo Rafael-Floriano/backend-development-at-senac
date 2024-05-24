@@ -1,7 +1,6 @@
 package com.br.aulamanytomany.dto;
 
-import com.br.aulamanytomany.entities.Contato;
-import com.br.aulamanytomany.entities.Usuario;
+import com.br.aulamanytomany.entities.Contato;import com.br.aulamanytomany.entities.Usuario;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
